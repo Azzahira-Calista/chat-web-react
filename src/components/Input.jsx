@@ -1,9 +1,15 @@
-import React, { useState, useContext } from "react";import Attach from "../assets/ic_attach.svg";
+;import Attach from "../assets/ic_attach.svg";
 import Img from "../assets/ic_image.svg";
-
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
-import {arrayUnion, doc, serverTimestamp, Timestamp, updateDoc,} from "firebase/firestore";
+import {
+  arrayUnion,
+  doc,
+  serverTimestamp,
+  Timestamp,
+  updateDoc,
+} from "firebase/firestore";
 import { db, storage } from "../firebase";
 import { v4 as uuid } from "uuid";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
@@ -64,10 +70,9 @@ const Input = () => {
       [data.chatId + ".date"]: serverTimestamp(),
     });
 
-    setText(" ");
+    setText("");
     setImg(null);
   };
-  
   return (
     <div className="input">
       <input
