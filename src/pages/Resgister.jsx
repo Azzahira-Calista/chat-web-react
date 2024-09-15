@@ -39,7 +39,8 @@ const Register = () => {
                     uid: res.user.uid,
                     displayName,
                     email,
-                    photoURL: downloadURL
+                    // photoURL: downloadURL
+                    downloadURL
                 });
                 await setDoc(doc(db, "userChats", res.user.uid), {});
 
